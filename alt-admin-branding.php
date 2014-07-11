@@ -85,20 +85,6 @@ class alt_admin_branding {
 	}
 
 	/**
-	 * Custom admin footer
-	 */
-	function alt_custom_admin_footer() {
-		echo '<strong>' . get_bloginfo( 'name' ) . ';</strong> A site by <a href="http://www.alt-design.net/" title="Alt Design" target="_blank">Alt</a>.';
-	}
-
-	/**
-	 * Custom admin footer version
-	 */
-	function alt_change_footer_version() {
-		return '<span class="alt-footer-logo">Alt</span>';
-	}
-
-	/**
 	 * Add Alt Design colour scheme
 	 */
 	function alt_add_color_scheme() {
@@ -155,6 +141,20 @@ class alt_admin_branding {
 			'id' => 'my-account',
 			'title' => $newtitle,
 		) );
+	}
+
+	/**
+	 * Custom admin footer
+	 */
+	function alt_custom_admin_footer() {
+		echo '<strong>' . get_bloginfo( 'name' ) . ';</strong> A site by <a href="http://www.alt-design.net/" title="Alt Design" target="_blank">Alt</a>.';
+	}
+
+	/**
+	 * Custom admin footer version
+	 */
+	function alt_change_footer_version() {
+		return '<span class="alt-footer-logo">Alt</span>';
 	}
 
 }
