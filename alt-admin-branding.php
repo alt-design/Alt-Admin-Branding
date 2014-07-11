@@ -105,7 +105,7 @@ class alt_admin_branding {
 		wp_admin_css_color(
 			'alt-design',
 			__( 'Alt Design', 'alt-design-color-scheme' ),
-			get_bloginfo( 'template_directory' ) . '/css/admin-colour-scheme.css',
+			ALT_PLUGIN_URL . 'css/admin-color-scheme.css',
 			array( '#25282b', '#363b3f', '#ff6600', '#ff6600' )
 		);
 	}
@@ -157,32 +157,6 @@ class alt_admin_branding {
 		) );
 	}
 
-	/**
-	 * Change the admin menu order
-	 */
-	function alt_custom_menu_order( $menu_ord ) {
-		if ( ! $menu_ord ) return true;
-
-		return array(
-			'index.php', // Dashboard
-			'separator1', // First separator
-			'edit.php', // Posts
-			'edit.php?post_type=page', // Pages
-			'edit.php?post_type=product', // Products
-			'separator2', // Second separator
-			'upload.php', // Media
-			'edit-comments.php', // Comments
-			'separator3', // Second separator
-			'themes.php', // Appearance
-			'plugins.php', // Plugins
-			'users.php', // Users
-			'tools.php', // Tools
-			'options-general.php', // Settings
-			'separator-last', // Last separator
-		);
-	}
-	add_filter( 'custom_menu_order', 'alt_custom_menu_order' );
-	add_filter( 'menu_order', 'alt_custom_menu_order' );
 }
 
 new alt_admin_branding();
